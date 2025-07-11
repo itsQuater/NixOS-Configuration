@@ -18,10 +18,8 @@
 		./management/tlp.nix
 		./management/xdgportal.nix
 
-		#./wm/i3.nix
 		#./wm/niri.nix
 		#./wm/waybar.nix
-		#./wm/wayland.nix
 		#./wm/wofi.nix
 	];
 }
