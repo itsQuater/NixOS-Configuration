@@ -81,6 +81,7 @@
 				};
 				"org/gnome/desktop/wm/preferences" = {
 					"button-layout" = ":minimize,maximize,close";
+					"num-workspaces" = 4;
 				};
 				"org/gnome/shell/extensions/workspace-indicator" = {
 					"embed-previews" = false;
