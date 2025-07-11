@@ -33,8 +33,8 @@
   system.autoUpgrade.dates = "daily";
 
   # Automatic kernel updates.
-  #boot.kernelPackages = pkgs.linuxPackages;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Configurate doas, a sudo alternative
   security.doas.enable = true;
