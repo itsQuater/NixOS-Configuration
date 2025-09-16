@@ -22,6 +22,14 @@
    # ---
 
 
+   # Install git.
+   # ---
+   programs.git = {
+      enable = true;
+   };
+   # ---
+
+
    # GDM and GNOME configuration.
    # ---
    services = {
