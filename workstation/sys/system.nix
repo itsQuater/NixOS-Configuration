@@ -73,6 +73,14 @@
    # ---
 
 
+   # Install git.
+   # ---
+   programs.git = {
+      enable = true;
+   };
+   # ---
+
+
    # Change system color scheme to dark. 
    # ---
    home-manager.users.luna = {
