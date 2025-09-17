@@ -126,7 +126,7 @@
 
    # Automatic kernel upgrades.
    # ---
-   boot.kernelPackages = pkgs.linuxPackages;
+   boot.kernelPackages = pkgs.linuxPackages_latest;
    # ---
 
 
