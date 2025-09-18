@@ -199,10 +199,12 @@
       spiceUSBRedirection.enable = true;
    };
    services.spice-vdagentd.enable = true;
-   dconf.settings = {
-      "org/virt-manager/virt-manager/connections" = {
-         autoconnect = [ "qemu:///system" ];
-         uris = [ "qemu:///system" ];
+   home-manager.users.luna = {
+      dconf.settings = {
+         "org/virt-manager/virt-manager/connections" = {
+            autoconnect = [ "qemu:///system" ];
+            uris = [ "qemu:///system" ];
+         };
       };
    };
    # ---
