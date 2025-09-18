@@ -207,5 +207,6 @@
          };
       };
    };
+   boot.kernelModules = [ "kvm-intel" ];
    # ---
 }
