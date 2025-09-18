@@ -158,4 +158,16 @@
       };
    };
    # ---
+
+
+   # Plymouth splash screen.
+   # ---
+   boot = {
+      plymouth = {
+         enable = true;
+         theme = "spinner";
+      };
+      initrd.systemd.enable = true;
+   };
+   # ---
 }
