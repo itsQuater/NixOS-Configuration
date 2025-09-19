@@ -44,23 +44,6 @@
    services.fprintd = {
       enable = true;
    };
-
-
-   # ZSH shell configuration. 
-   # ---
-   programs.zsh = {
-      enableCompletion = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-      shellAliases = {
-         update = "doas nixos-rebuild switch --flake /etc/nixos/laptop/#nixos";
-         pullconfig = "cd ~ && doas echo '[SYS]> Create .tmp space' && doas mkdir .tmp && cd .tmp && echo '[GIT]> Pulling configuration' && doas git clone https://www.github.com/itsQuater/NixOS-Configuration && cd ~ && echo '[SYS]> Clearing out old data' && doas rm -r /etc/nixos/* && echo '[SYS]> Copying new configuration' && doas cp -r ./.tmp/NixOS-Configuration/* /etc/nixos/ && echo '[SYS]> Removing .tmp space' && doas rm -r ./.tmp && doas rm -r /etc/nixos/README.md && echo '[NIX]> Applying new configuration' && doas nixos-rebuild switch --flake /etc/nixos/laptop/#nixos";
-      };
-      ohMyZsh = {
-         enable = true;
-         plugins = [ "git" "history" ];
-      };
-   };
    # ---
 
 
@@ -208,5 +191,23 @@
       };
    };
    boot.kernelModules = [ "kvm-intel" ];
+   # ---
+
+
+   # ZSH shell configuration. 
+   # ---
+   programs.zsh = {
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+      shellAliases = {
+         update = "doas nix flake update --flake /etc/nixos/laptop/#nixos && doas nixos-rebuild switch --flake /etc/nixos/laptop/#nixos";
+         pullconfig = "cd ~ && doas echo '[SYS]> Create .tmp space' && doas mkdir .tmp && cd .tmp && echo '[GIT]> Pulling configuration' && doas git clone https://www.github.com/itsQuater/NixOS-Configuration && cd ~ && echo '[SYS]> Clearing out old data' && doas rm -r /etc/nixos/* && echo '[SYS]> Copying new configuration' && doas cp -r ./.tmp/NixOS-Configuration/* /etc/nixos/ && echo '[SYS]> Removing .tmp space' && doas rm -r ./.tmp && doas rm -r /etc/nixos/README.md && echo '[NIX]> Applying new configuration' && doas nixos-rebuild switch --flake /etc/nixos/laptop/#nixos";
+      };
+      ohMyZsh = {
+         enable = true;
+         plugins = [ "git" "history" ];
+      };
+   };
    # ---
 }
