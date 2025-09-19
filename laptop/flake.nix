@@ -7,6 +7,8 @@
     	url = "github:nix-community/home-manager";
     	inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-unstable.url = "github:YaLTeR/niri";
+    xwayland-satellite-unstable.url = "github:Supreeeme/xwayland-satellite";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
