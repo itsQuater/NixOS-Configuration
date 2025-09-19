@@ -93,6 +93,17 @@
    # ---
 
 
+   # Change accent system color.
+   # ---
+   home-manager.users.luna = {
+      dconf.settings = {
+         "org/gnome/desktop/interface" = {
+            "accent-color" = "red";
+         };
+      };
+   };
+         
+
    # Install and enable selected GNOME extensions. 
    # ---
    home-manager.users.luna = {
