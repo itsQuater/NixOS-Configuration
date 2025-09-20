@@ -191,8 +191,8 @@
       user = "luna";
    };
    systemd.services = {
-      "getty@tty1" = false;
-      "autovt@tty1" = false;
+      "getty@tty1".enable = false;
+      "autovt@tty1".enable = false;
    };
    # ---
 
