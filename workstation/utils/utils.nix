@@ -25,7 +25,34 @@
    };
    # ---
 
-   
+   # Install and configure neovim.
+   # ---
+   home-manager.users.luna = {
+      programs.neovim = {
+         enable = true;
+         viAlias = true;
+         vimAlias = true;
+	  };
+   };
+   programs.neovim = {
+      defaultEditor = true;
+   };
+   # ---
+
+
+   # Configure VSCode. 
+   # ---
+   home-manager.users.luna = {
+      programs.vscode = {
+         enable = true;
+         profiles.default.extensions = with pkgs.vscode-extensions; [
+            
+		 ];
+	  };
+   };
+   # ---
+
+
    # Install other applications.
    # ---
    imports = [
@@ -40,6 +67,11 @@
 	    spotify
 	    tor-browser
             audacity
+            davinci-resolve
+            makemkv
+            handbrake
+            prismlauncher
+            obsidian
          ];
       })
    ];
