@@ -182,7 +182,20 @@
       shell = pkgs.zsh;
    };
    # ---
-  
+
+
+   # Automatic login on boot.
+   # ---
+   services.displayManager.autoLogin = {
+      enable = true;
+      user = "luna";
+   };
+   systemd.services = {
+      "getty@tty1" = false;
+      "autovt@tty1" = false;
+   };
+   # ---
+
 
    # Enable ZSH shell.
    programs = {
