@@ -9,13 +9,13 @@
          enable = true;
          settings = {
             CPU_SCALING_GOVERNOR_ON_AC = "performance";
-            CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+            CPU_SCALING_GOVERNOR_ON_BAT = "performance";
             CPU_SCALING_PREF_ON_AC = "performance";
-            CPU_SCALING_PREF_ON_BAT = "powersave";
+            CPU_SCALING_PREF_ON_BAT = "performance";
             CPU_MIN_PREF_ON_AC = 0;
             CPU_MIN_PREF_ON_BAT = 0;
             CPU_MAX_PREF_ON_AC = 100;
-            CPU_MAX_PREF_ON_BAT = 30;
+            CPU_MAX_PREF_ON_BAT = 100;
          };
       };
    };
@@ -45,7 +45,7 @@
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
-         update = "doas nixos-rebuild switch --flake /etc/nixos/laptop/#nixos";
+         update = "doas nixos-rebuild switch --flake /etc/nixos/workstation/#nixos";
          pullconfig = "cd ~ && doas echo '[SYS]> Create .tmp space' && doas mkdir .tmp && cd .tmp && echo '[GIT]> Pulling configuration' && doas git clone https://www.github.com/itsQuater/NixOS-Configuration && cd ~ && echo '[SYS]> Clearing out old data' && doas rm -r /etc/nixos/* && echo '[SYS]> Copying new configuration' && doas cp -r ./.tmp/NixOS-Configuration/* /etc/nixos/ && echo '[SYS]> Removing .tmp space' && doas rm -r ./.tmp && doas rm -r /etc/nixos/README.md && echo '[NIX]> Applying new configuration' && doas nixos-rebuild switch --flake /etc/nixos/workstation/#nixos";
       };
       ohMyZsh = {
@@ -58,15 +58,33 @@
 
    # Video drivers & codecs and accelerated video playback.
    # ---
-   hardware.graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-         intel-vaapi-driver
-         libvdpau-va-gl
-      ];
+   hardware = {
+      graphics = { 
+         enable = true;
+         extraPackages = with pkgs; [
+            intel-vaapi-driver
+            libvdpau-va-gl
+		 ];
+      };
+      nvidia = {
+         package = config.boot.kernelPackages.nvidiaPackages.stable;
+         modesetting.enable = true;
+         open = false;
+         nvidiaSettings = true;
+         powerManagement = {
+            enable = false;
+            finegrained = false;
+		 };
+	  };
+   };
+   services.xserver.videoDrivers = [ "nvidia" ];
+   environment.sessionVariables = { 
+      LIBVA_DRIVER_NAME = "iHD"; 
    };
    nixpkgs.config.packageOverrides = pkgs: {
-      intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true;};
+     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { 
+        enableHybridCodec = true;
+     };
    };
    environment.systemPackages = with pkgs; [
       ffmpeg-full
