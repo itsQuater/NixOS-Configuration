@@ -101,6 +101,18 @@
    # ---
 
 
+   # Plymouth splash screen.
+   # ---
+   boot = {
+      plymouth = {
+         enable = true;
+         theme = "spinner";
+      };
+      initrd.systemd.enable = true;
+   };
+   # ---
+
+
    # Change system color scheme to dark. 
    # ---
    home-manager.users.luna = {
