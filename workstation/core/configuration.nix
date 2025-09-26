@@ -14,8 +14,10 @@
        inputs.home-manager.nixosModules.home-manager
        # Inculde import for system focused resources. 
        ./../sys/system.nix
-       # 
+       # Add system applications.
        ./../utils/utils.nix
+       # Add anime-game-launcher.
+       ./../utils/launcher.nix
      ];
    # ---
 
