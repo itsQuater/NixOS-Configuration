@@ -16,8 +16,6 @@
        ./../sys/system.nix
        # Add system applications.
        ./../utils/utils.nix
-       # Add anime-game-launcher.
-       ./../utils/launcher.nix
      ];
    # ---
 
