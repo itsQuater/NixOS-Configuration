@@ -36,6 +36,7 @@
    services.fprintd = {
       enable = true;
    };
+   # ---
 
 
    # ZSH shell configuration. 
@@ -199,5 +200,44 @@
          };
       };
    };
+   # ---
+
+
+   # Add and configure virtualisation.
+   # --- 
+   users.users.luna.extraGroups = [ "libvirtd" ];
+   imports = [
+      ( { pkgs, ... }: {
+         environment.systemPackages = with pkgs; [
+            virt-manager
+            virt-viewer
+            spice
+            spice-gtk
+         ];
+      })
+   ];
+   virtualisation = {
+      libvirtd = {
+         enable = true;
+         qemu = {
+            swtpm.enable = true;
+            ovmf = {
+               enable = true;
+               packages = [ pkgs.OVMFFull.fd ];
+			};
+		 };
+	  };
+      spiceUSBRedirection.enable = true;
+   };
+   services.spice-vdagentd.enable = true;
+   home-manager.users.luna = {
+      dconf.settings = {
+         "org/virt-manager/virt-manager/connections" = {
+            autoconnect = [ "qemu:///system" ];
+            uris = [ "qemu:///system" ];
+         };
+      };
+   };
+   boot.kernelModules = [ "kvm-intel" ];
    # ---
 }
