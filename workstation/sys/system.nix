@@ -240,4 +240,14 @@
    };
    boot.kernelModules = [ "kvm-intel" ];
    # ---
+
+
+   # Add swap on zram.
+   # ---
+   zramSwap = {
+      enable = true;
+      algorithm = "zstd";
+      memoryPrecent = 50;
+   };
+   # ---
 }
