@@ -39,7 +39,7 @@
       doas = {
          enable = true; 
          extraRules = [{
-            users = ["luna"];
+            users = ["kiana"];
             keepEnv = true;
             persist = true;
          }];
@@ -96,7 +96,7 @@
    home-manager = {
      extraSpecialArgs = {inherit inputs;};
      users = {
-   	"luna" = import ./home.nix;
+   	"kiana" = import ./home.nix;
      };
    };
    # ---
@@ -173,9 +173,9 @@
 
    # System user configuration.
    # ---
-   users.users.luna = {
+   users.users.kiana = {
       isNormalUser = true;
-      description = "Luna";
+      description = "Kiana";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
       #  thunderbird
