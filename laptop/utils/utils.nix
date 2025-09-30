@@ -28,7 +28,7 @@
 
    # Install and configure neovim.
    # ---
-   home-manager.users.luna = {
+   home-manager.users.kiana = {
       programs.neovim = {
          enable = true;
          viAlias = true;
@@ -43,7 +43,7 @@
 
    # Configure VSCode. 
    # ---
-   home-manager.users.luna = {
+   home-manager.users.kiana = {
       programs.vscode = {
          enable = true;
          profiles.default.extensions = with pkgs.vscode-extensions; [
