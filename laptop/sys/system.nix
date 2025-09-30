@@ -67,7 +67,7 @@
 
    # Change system color scheme to dark. 
    # ---
-   home-manager.users.luna = {
+   home-manager.users.kiana = {
       dconf = {
          enable = true;
          settings = {
@@ -80,7 +80,7 @@
 
    # Configurate virtual desktops. 
    # ---
-   home-manager.users.luna = {
+   home-manager.users.kiana = {
       dconf.settings = {
          "org/gnome/mutter" = {
             "dynamic-workspaces" = false;
@@ -95,7 +95,7 @@
 
    # Change accent system color.
    # ---
-   home-manager.users.luna = {
+   home-manager.users.kiana = {
       dconf.settings = {
          "org/gnome/desktop/interface" = {
             "accent-color" = "red";
@@ -106,7 +106,7 @@
 
    # Install and enable selected GNOME extensions. 
    # ---
-   home-manager.users.luna = {
+   home-manager.users.kiana = {
       home.packages = with pkgs.gnomeExtensions; [
          blur-my-shell
          space-bar
@@ -144,7 +144,7 @@
 
    # Configurate window control buttons.
    # ---
-   home-manager.users.luna = {
+   home-manager.users.kiana = {
       dconf.settings = {
          "org/gnome/desktop/wm/preferences" = {
             "button-layout" = ":minimize,maximize,close";
@@ -168,7 +168,7 @@
 
    # Add and configure virtualisation.
    # --- 
-   users.users.luna.extraGroups = [ "libvirtd" ];
+   users.users.kiana.extraGroups = [ "libvirtd" ];
    imports = [
       ( { pkgs, ... }: {
          environment.systemPackages = with pkgs; [
@@ -193,7 +193,7 @@
       spiceUSBRedirection.enable = true;
    };
    services.spice-vdagentd.enable = true;
-   home-manager.users.luna = {
+   home-manager.users.kiana = {
       dconf.settings = {
          "org/virt-manager/virt-manager/connections" = {
             autoconnect = [ "qemu:///system" ];
