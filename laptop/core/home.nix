@@ -1,8 +1,8 @@
 {inputs, config, pkgs, ... }:
 
 {
-  home.username = "luna";
-  home.homeDirectory = "/home/luna";
+  home.username = "kiana";
+  home.homeDirectory = "/home/kiana";
 
   home.stateVersion = "25.05";
   
