@@ -86,7 +86,7 @@
          open = false;
          nvidiaSettings = true;
          powerManagement = {
-            enable = false;
+            enable = true;
             finegrained = false;
 		 };
 	  };
