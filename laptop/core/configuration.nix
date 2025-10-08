@@ -227,6 +227,18 @@
       #  noProxy = "127.0.0.1,localhost,internal.domain";
      #};
    };
+   systemd.services.wpa_supplicant.environment.OPENSSL_CONF =
+      pkgs.writeText"openssl.cnf""
+         openssl_conf = openssl_init
+         [openssl_init]
+         ssl_conf = ssl_select
+         [ssl_select]
+         system_default = system_default_sect
+         [system_default_sect]
+         Options - UnsafeLegacyRenegotiation
+         [system_default_sect]
+         CipherString = Default:@SECLEVEL=0
+      ";
    # ---
 
 
