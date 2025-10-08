@@ -166,45 +166,6 @@
    # ---
 
 
-   # Add and configure virtualisation.
-   # --- 
-   users.users.kiana.extraGroups = [ "libvirtd" ];
-   imports = [
-      ( { pkgs, ... }: {
-         environment.systemPackages = with pkgs; [
-            virt-manager
-            virt-viewer
-            spice
-            spice-gtk
-         ];
-      })
-   ];
-   virtualisation = {
-      libvirtd = {
-         enable = true;
-         qemu = {
-            swtpm.enable = true;
-            ovmf = {
-               enable = true;
-               packages = [ pkgs.OVMFFull.fd ];
-			};
-		 };
-	  };
-      spiceUSBRedirection.enable = true;
-   };
-   services.spice-vdagentd.enable = true;
-   home-manager.users.kiana = {
-      dconf.settings = {
-         "org/virt-manager/virt-manager/connections" = {
-            autoconnect = [ "qemu:///system" ];
-            uris = [ "qemu:///system" ];
-         };
-      };
-   };
-   boot.kernelModules = [ "kvm-intel" ];
-   # ---
-
-
    # ZSH shell configuration. 
    # ---
    programs.zsh = {
@@ -213,7 +174,7 @@
       syntaxHighlighting.enable = true;
       shellAliases = {
          update = "doas nixos-rebuild switch --flake /etc/nixos/laptop/#nixos";
-         fullupdate = "doas nix flake update --flake /etc/nixos/laptop/#nixos && doas nixos-rebuild switch --flake /etc/nixos/laptop/#nixos";
+         fullupdate = "doas nix flake update --flake /etc/nixos/laptop/ && doas nixos-rebuild switch --flake /etc/nixos/laptop/#nixos";
          pullconfig = "cd ~ && doas echo '[SYS]> Create .tmp space' && doas mkdir .tmp && cd .tmp && echo '[GIT]> Pulling configuration' && doas git clone https://www.github.com/itsQuater/NixOS-Configuration && cd ~ && echo '[SYS]> Clearing out old data' && doas rm -r /etc/nixos/* && echo '[SYS]> Copying new configuration' && doas cp -r ./.tmp/NixOS-Configuration/* /etc/nixos/ && echo '[SYS]> Removing .tmp space' && doas rm -r ./.tmp && doas rm -r /etc/nixos/README.md && echo '[SYS]> Done!' && echo ' --- ' && echo 'Is is now recomended to run the folowing command(s)' && echo ' ---> fullupdate' && echo ' --- ' && echo ' ' ";
       };
       ohMyZsh = {
