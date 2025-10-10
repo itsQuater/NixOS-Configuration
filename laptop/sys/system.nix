@@ -53,7 +53,6 @@
       enable = true;
       extraPackages = with pkgs; [
          intel-vaapi-driver
-         libvdpau-va-gl
       ];
    };
    nixpkgs.config.packageOverrides = pkgs: {
