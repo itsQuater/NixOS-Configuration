@@ -145,7 +145,7 @@
          just-perfection
          user-themes
          removable-drive-menu
-         user-avatar-in-quick-settings
+         media-controls
          arc-menu
          weather-oclock
          rounded-window-corners-reborn
@@ -161,7 +161,7 @@
             just-perfection.extensionUuid
             user-themes.extensionUuid
             removable-drive-menu.extensionUuid
-            user-avatar-in-quick-settings.extensionUuid
+            media-controls.extensionUuid
             arc-menu.extensionUuid
             weather-oclock.extensionUuid
             rounded-window-corners-reborn.extensionUuid
