@@ -127,7 +127,7 @@
          "org/gnome/shell" = {
 	        "favorite-apps" = [
                "org.gnome.Console.desktop" "firefox.desktop" "torbrowser.desktop"
-               "mullvad-vpn.desktop" "descord-ptb.desktop" "steam.desktop" "spotify.desktop"
+               "mullvad-vpn.desktop" "discord-ptb.desktop" "steam.desktop" "spotify.desktop"
                "code.desktop" "nvim.desktop" "obsidian.desktop"
                "gimp.desktop" "org.kde.krita.desktop" "org.inkscape.Inkscape.desktop"
                "vlc.desktop" "audacity.desktop" "writer.desktop"
