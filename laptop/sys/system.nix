@@ -108,6 +108,37 @@
    # ---
 
 
+   # Configure dock.
+   # ---
+   home-manager.users.kiana = {
+      dconf.settings = {
+         "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+            "blur" = false;
+		 };
+         "org/gnome/shell/extensions/dash-to-dock" = {
+            "intellihide-mode" = "ALL_WINDOWS";
+            "dash-max-icon-size" = 56;
+            "custom-theme-shrink" = true;
+            "transparency-mode" = "FIXED";
+            "background-opacity" = 56;
+            "hot-keys" = false;
+            "show-show-apps-button" = false;
+		 };
+         "org/gnome/shell" = {
+	        "favorite-apps" = [
+               "org.gnome.Console.desktop" "firefox.desktop" "torbrowser.desktop"
+               "mullvad-vpn.desktop" "descord-ptb.desktop" "steam.desktop" "spotify.desktop"
+               "code.desktop" "nvim.desktop" "obsidian.desktop"
+               "gimp.desktop" "org.kde.krita.desktop" "org.inkscape.Inkscape.desktop"
+               "vlc.desktop" "audacity.desktop" "writer.desktop"
+               "calc.desktop" "impress.desktop" "org.gnome.Nautilus.desktop"
+			];
+		 };
+	  };
+   };
+   # ---
+
+
    # Change system color scheme to dark. 
    # ---
    home-manager.users.kiana = {
