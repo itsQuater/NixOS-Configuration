@@ -82,6 +82,20 @@
    # ---
 
 
+   # Configure just perfection.
+   # ---
+   home-manager.users.kiana = {
+      dconf.settings = {
+         "org/gnome/shell/extensions/just-perfection" = {
+            "startup-status" = 0;
+            "clock-menu-position" = 1;
+            "notification-banner-position" = 2;
+		 };
+	  };
+   };
+   # ---
+
+
    # Change system color scheme to dark. 
    # ---
    home-manager.users.kiana = {
