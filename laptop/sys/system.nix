@@ -96,6 +96,18 @@
    # ---
 
 
+   # Remove hot corner.
+   # ---
+   home-manager.users.kiana = {
+      dconf.settings = {
+         "org/gnome/desktop/interface" = {
+            "enable-hot-corners" = false;
+		 };
+	  };
+   };
+   # ---
+
+
    # Change system color scheme to dark. 
    # ---
    home-manager.users.kiana = {
