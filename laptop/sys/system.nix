@@ -64,6 +64,24 @@
    # ---
 
 
+   # Configure arcmenu.
+   # ---
+   home-manager.users.kiana = {
+      dconf.settings = {
+         "org/gnome/shell/extensions/arcmenu" = {
+            "custom-menu-button-icon-size" = 30.0;
+            "menu-button-icon" = "Distro_Icon";
+            "distro-icon" = 22;
+            "menu-button-appearance" = "Icon_Text";
+            "custom-menu-button-text" = "${config.networking.hostName}";
+            "menu-layout" = "Runner";
+            "runner-position" = "Centered";
+         };
+	  };
+   };
+   # ---
+
+
    # Change system color scheme to dark. 
    # ---
    home-manager.users.kiana = {
