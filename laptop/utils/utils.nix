@@ -64,6 +64,17 @@
 	  };
    };
    # ---
+
+   # Install fastfetch.
+   # ---
+   home-manager.users.kiana = {
+      programs.fastfetch = {
+          enable = true;
+	  };
+   };
+   # ---
+
+
    # Install other applications.
    # ---
    imports = [
