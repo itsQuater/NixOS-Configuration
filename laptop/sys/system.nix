@@ -82,6 +82,20 @@
    # ---
 
 
+   # Set wallpaper depending on theme.
+   # ---
+   home-manager.users.kiana = {
+      dconf.settings = {
+         "org/gnome/desktop/background" = {
+            picture-options = "wallpaper";
+            color-shading-type = "solid";
+            picture-uri-dark = "file://" + "/etc/nixos/laptop/wallppr/1450641-final.jpg";
+		 };
+	  };
+   };
+   # ---
+
+
    # Configure just perfection.
    # ---
    home-manager.users.kiana = {
