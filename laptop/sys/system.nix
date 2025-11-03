@@ -87,7 +87,7 @@
    home-manager.users.kiana = {
       dconf.settings = {
          "org/gnome/desktop/background" = {
-            picture-options = "wallpaper";
+            picture-options = "zoom";
             color-shading-type = "solid";
             picture-uri-dark = "file://" + "/etc/nixos/laptop/wallppr/1450641-final.jpg";
 		 };
@@ -135,7 +135,7 @@
             "dash-max-icon-size" = 56;
             "custom-theme-shrink" = true;
             "transparency-mode" = "FIXED";
-            "background-opacity" = 56;
+            "background-opacity" = 35;
             "hot-keys" = false;
             "show-show-apps-button" = false;
 		 };
