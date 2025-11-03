@@ -139,15 +139,25 @@
             "hot-keys" = false;
             "show-show-apps-button" = false;
 		 };
+	  };
+   };
+   # ---
+
+
+   # Set favourite apps.
+   # ---
+   home-manager.users.kiana = {
+      dconf.settings = {
          "org/gnome/shell" = {
-	        "favorite-apps" = [
+            "favorite-apps" = [
                "org.gnome.Console.desktop" "firefox.desktop" "torbrowser.desktop"
-               "mullvad-vpn.desktop" "discord-ptb.desktop" "steam.desktop" "spotify.desktop"
-               "code.desktop" "nvim.desktop" "obsidian.desktop"
-               "gimp.desktop" "org.kde.krita.desktop" "org.inkscape.Inkscape.desktop"
-               "vlc.desktop" "audacity.desktop" "writer.desktop"
-               "calc.desktop" "impress.desktop" "org.gnome.Nautilus.desktop"
-			];
+               "mullvad-vpn.desktop" "discord-ptb.desktop" "steam.desktop"
+               "spotify.desktop" "code.desktop" "nvim.desktop"
+               "obsidian.desktop" "gimp.desktop" "org.kde.krita.desktop"
+               "org.inkscape.Inkscape.desktop" "vlc.desktop" "audacity.desktop"
+               "writer.desktop" "calc.desktop" "impress.desktop"
+               "org.gnome.Nautilus.desktop"
+			]; 
 		 };
 	  };
    };
