@@ -90,6 +90,7 @@
             "startup-status" = 0;
             "clock-menu-position" = 1;
             "notification-banner-position" = 2;
+            "switcher-popup-delay" = false;
 		 };
 	  };
    };
@@ -133,6 +134,23 @@
                "vlc.desktop" "audacity.desktop" "writer.desktop"
                "calc.desktop" "impress.desktop" "org.gnome.Nautilus.desktop"
 			];
+		 };
+	  };
+   };
+   # ---
+
+
+   # Configure blur my shell.
+   # ---
+   home-manager.users.kiana = {
+      dconf.settings = {
+         "org/gnome/shell/extensions/blur-my-shell/panel" = {
+            "brightness" = 1.0;
+            "force-light-text" = false;
+            "override-background" = true;
+            "pipeline" = "pipeline_default";
+            "sigma" = 0;
+            "static-blur" = false;
 		 };
 	  };
    };
@@ -255,6 +273,16 @@
          enable = true;
          plugins = [ "git" "history" ];
       };
+   };
+   # ---
+
+
+   # Add swap on zram0.
+   # ---
+   zramSwap = {
+      enable = true;
+      algorithm = "zstd";
+      memoryPercent = 125;
    };
    # ---
 }
